@@ -1,0 +1,29 @@
+def contact_book():
+    contacts = {}
+
+    while True:
+        print("\nContact Book")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Exit")
+        
+        choice = input("Choose an option: ")
+
+        if choice == '1':
+            name = input("Enter contact name: ")
+            phone = input("Enter phone number: ")
+            contacts[name] = phone
+            print("Contact added.")
+        elif choice == '2':
+            if contacts:
+                print("Contacts:")
+                for name, phone in contacts.items():
+                    print(f"{name}: {phone}")
+            else:
+                print("No contacts available.")
+        elif choice == '3':
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option, please try again.")
+contact_book()
